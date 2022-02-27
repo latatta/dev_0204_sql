@@ -1,12 +1,12 @@
--- VIEW : °¡»ó Å×ÀÌºí(¹°¸®ÀûÀ¸·Î Á¸ÀçÇÏÁö ¾Ê°í ³í¸®ÀûÀ¸·Î ¸¸µé¾îÁø Å×ÀÌºí)
---			¤¤ ¹°¸®ÀûÀÎ Å×ÀÌºíÀ» ÀÌ¿ëÇØ¼­ »ı¼ºÇÕ´Ï´Ù.
---  		¤¤ »ç¿ëÀÚ(°³¹ßÀÚ)°¡ Å×ÀÌºíÃ³·³ SELECT ¸¦ Á¶È¸ °¡´ÉÇÑ Å×ÀÌºí
---			¤¤ GRANT RESOURCE, CONNECT TO IDEV;	-> RESOURCE ¿¡ VIEW »ı¼ºÀº Á¦¿ÜÀÔ´Ï´Ù.
+-- VIEW : ê°€ìƒ í…Œì´ë¸”(ë¬¼ë¦¬ì ìœ¼ë¡œ ì¡´ì¬í•˜ì§€ ì•Šê³  ë…¼ë¦¬ì ìœ¼ë¡œ ë§Œë“¤ì–´ì§„ í…Œì´ë¸”)
+--			ã„´ ë¬¼ë¦¬ì ì¸ í…Œì´ë¸”ì„ ì´ìš©í•´ì„œ ìƒì„±í•©ë‹ˆë‹¤.
+--  		ã„´ ì‚¬ìš©ì(ê°œë°œì)ê°€ í…Œì´ë¸”ì²˜ëŸ¼ SELECT ë¥¼ ì¡°íšŒ ê°€ëŠ¥í•œ í…Œì´ë¸”
+--			ã„´ GRANT RESOURCE, CONNECT TO IDEV;	-> RESOURCE ì— VIEW ìƒì„±ì€ ì œì™¸ì…ë‹ˆë‹¤.
 
 CREATE VIEW v_buy
 AS SELECT PCODE , CUSTOM_ID  FROM tbl_buy#;		-- insufficient PRIVILEGES
 
-/*	idev À¯Àú¿¡°Ô create view ±ÇÇÑ ºÎ¿© (sql*plus¿¡¼­ ½ÇÇà)
+/*	idev ìœ ì €ì—ê²Œ create view ê¶Œí•œ ë¶€ì—¬ (sql*plusì—ì„œ ì‹¤í–‰)
 SQL> connect system
 Enter password:
 Connected.
@@ -15,12 +15,12 @@ SQL> grant create view to idev;
 Grant succeeded.
  */
 
--- view¸¦ ÀÌ¿ëÇÑ SELECT Á¶È¸
+-- viewë¥¼ ì´ìš©í•œ SELECT ì¡°íšŒ
 SELECT * FROM V_BUY vb WHERE PCODE = 'dk_143';
 
 
--- buy#, custom#À» Á¶ÀÎÇÏ¿© custom_id, pcode, °í°´ÀÌ¸§, ÀÌ¸ŞÀÏ, ±¸¸Å¼ö·®, ±¸¸Å³¯Â¥
---   ¤¤ v_sale ÀÌ¸§ÀÇ view¸¦ ¸¸µé¾îº¸¾Æ¶ó
+-- buy#, custom#ì„ ì¡°ì¸í•˜ì—¬ custom_id, pcode, ê³ ê°ì´ë¦„, ì´ë©”ì¼, êµ¬ë§¤ìˆ˜ëŸ‰, êµ¬ë§¤ë‚ ì§œ
+--   ã„´ v_sale ì´ë¦„ì˜ viewë¥¼ ë§Œë“¤ì–´ë³´ì•„ë¼
 CREATE VIEW v_sale AS 
 SELECT tc.CUSTOM_ID , tb.PCODE , tc.NAME , tc.EMAIL , tb.QUANTITY , tb.BUY_DATE 
 FROM tbl_buy# tb JOIN tbl_customer# tc 

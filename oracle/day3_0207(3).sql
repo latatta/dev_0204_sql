@@ -1,17 +1,17 @@
--- ¿¹½Ã : ¼îÇÎ¸ô(°í°´ÀÌ »óÇ°À» ±¸¸ÅÇÕ´Ï´Ù)
+-- ì˜ˆì‹œ : ì‡¼í•‘ëª°(ê³ ê°ì´ ìƒí’ˆì„ êµ¬ë§¤í•©ë‹ˆë‹¤)
 
--- °í°´ Å×ÀÌºí
+-- ê³ ê° í…Œì´ë¸”
 CREATE TABLE tbl_customer (
-	custom_id varchar2(20),		-- ¿µ¹®/¼ýÀÚ/±âÈ£
-	name nvarchar2 (20),		-- ÇÑ±Ûµî ´Ù±¹¾î¹®ÀÚ °³¼ö
+	custom_id varchar2(20),		-- ì˜ë¬¸/ìˆ«ìž/ê¸°í˜¸
+	name nvarchar2 (20),		-- í•œê¸€ë“± ë‹¤êµ­ì–´ë¬¸ìž ê°œìˆ˜
 	email varchar2 (20),
 	age number(3),
 	reg_date timestamp DEFAULT sysdate
 );
 
 
--- »óÇ° Å×ÀÌºí : »óÇ°ÄÚµå(°¡º¯±æÀÌ 20ÀÚ¸®), Ä«Å×°í¸®(°íÁ¤±æÀÌ 2ÀÚ¸®)
--- 										A1 : ÀüÀÚÁ¦Ç°, B1 : ½ÄÇ°
+-- ìƒí’ˆ í…Œì´ë¸” : ìƒí’ˆì½”ë“œ(ê°€ë³€ê¸¸ì´ 20ìžë¦¬), ì¹´í…Œê³ ë¦¬(ê³ ì •ê¸¸ì´ 2ìžë¦¬)
+-- 										A1 : ì „ìžì œí’ˆ, B1 : ì‹í’ˆ
 CREATE TABLE tbl_product (
 	pcode varchar2 (20),
 	category char(2),
@@ -20,67 +20,67 @@ CREATE TABLE tbl_product (
 );
 
 
--- ±¸¸Å Å×ÀÌºí : ¾î´À °í°´ÀÌ ¹«½¼ »óÇ°À» ±¸ÀÔÇÏ´Â°¡?
+-- êµ¬ë§¤ í…Œì´ë¸” : ì–´ëŠ ê³ ê°ì´ ë¬´ìŠ¨ ìƒí’ˆì„ êµ¬ìž…í•˜ëŠ”ê°€?
 CREATE TABLE tbl_buy (
 	custom_id varchar2 (20),
 	pcode varchar2 (20),
-	quantity number (5),		-- ¼ö·®
+	quantity number (5),		-- ìˆ˜ëŸ‰
 	buy_date timestamp
 );
 
 ----------------------------------------------------------
--- µ¥ÀÌÅÍÀÇ Ãß°¡ : INSERT 
--- °í°´Á¤º¸ ÀÔ·Â
+-- ë°ì´í„°ì˜ ì¶”ê°€ : INSERT 
+-- ê³ ê°ì •ë³´ ìž…ë ¥
 INSERT INTO IDEV.TBL_CUSTOMER(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('mina012', '±è¹Ì³ª', 'kimm@gmail.com', 20, sysdate);
+VALUES('mina012', 'ê¹€ë¯¸ë‚˜', 'kimm@gmail.com', 20, sysdate);
 INSERT INTO IDEV.TBL_CUSTOMER(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('hongGD', 'È«±æµ¿', 'gil@korea.com', 32, sysdate);
+VALUES('hongGD', 'í™ê¸¸ë™', 'gil@korea.com', 32, sysdate);
 INSERT INTO IDEV.TBL_CUSTOMER(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('twice', '¹Ú¸ð¸ð', 'momo@daum.net', 29, sysdate);
+VALUES('twice', 'ë°•ëª¨ëª¨', 'momo@daum.net', 29, sysdate);
 INSERT INTO IDEV.TBL_CUSTOMER(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('wonder', 'ÀÌ³ª³ª', 'lee@naver.com', 40, sysdate);
+VALUES('wonder', 'ì´ë‚˜ë‚˜', 'lee@naver.com', 40, sysdate);
 
--- ### Áß¿ä1 : custom Å×ÀÌºíÀÇ Çà(row)µ¥ÀÌÅÍ¸¦ ±¸ºÐÇÑ custom_id, PCODE ´Â Áßº¹µÇ¸é ¾ÈµË´Ï´Ù.
+-- ### ì¤‘ìš”1 : custom í…Œì´ë¸”ì˜ í–‰(row)ë°ì´í„°ë¥¼ êµ¬ë¶„í•œ custom_id, PCODE ëŠ” ì¤‘ë³µë˜ë©´ ì•ˆë©ë‹ˆë‹¤.
 INSERT INTO IDEV.TBL_CUSTOMER(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('wonder', 'ÃÖ¸ð¸ð', 'choi@naver.com', 33, sysdate);
+VALUES('wonder', 'ìµœëª¨ëª¨', 'choi@naver.com', 33, sysdate);
 
 
--- »óÇ°Á¤º¸ ÀÔ·Â
+-- ìƒí’ˆì •ë³´ ìž…ë ¥
 INSERT INTO IDEV.TBL_PRODUCT(PCODE, CATEGORY, PNAME, PRICE)
-VALUES('IPAD011', 'A1', '¾ÆÀÌÆÐµå10', 880000);
+VALUES('IPAD011', 'A1', 'ì•„ì´íŒ¨ë“œ10', 880000);
 INSERT INTO IDEV.TBL_PRODUCT(PCODE, CATEGORY, PNAME, PRICE)
-VALUES('DOWON123a', 'B1', 'µ¿¿øÂüÄ¡¼±¹°¼¼Æ®', 54000);
+VALUES('DOWON123a', 'B1', 'ë™ì›ì°¸ì¹˜ì„ ë¬¼ì„¸íŠ¸', 54000);
 INSERT INTO IDEV.TBL_PRODUCT(PCODE, CATEGORY, PNAME, PRICE)
-VALUES('dk_143', 'A2', '¸ð¼Çµ¥½ºÅ©', 234500);
+VALUES('dk_143', 'A2', 'ëª¨ì…˜ë°ìŠ¤í¬', 234500);
 
--- ### Áß¿ä 2: ¿¹¸¦ µé¸é, price, quantity µîÀÇ ÄÃ·³Àº nullÀÌ µÇ¸é ¾ÈµË´Ï´Ù(²À ÇÊ¼ö µ¥ÀÌÅÍ·Î ÀúÀåµÇ¾î¾ß ÇÕ´Ï´Ù).
+-- ### ì¤‘ìš” 2: ì˜ˆë¥¼ ë“¤ë©´, price, quantity ë“±ì˜ ì»¬ëŸ¼ì€ nullì´ ë˜ë©´ ì•ˆë©ë‹ˆë‹¤(ê¼­ í•„ìˆ˜ ë°ì´í„°ë¡œ ì €ìž¥ë˜ì–´ì•¼ í•©ë‹ˆë‹¤).
 INSERT INTO IDEV.TBL_PRODUCT(PCODE, CATEGORY, PNAME)
-VALUES('dk_143', 'A2', 'ÀÚµ¿¸ð¼Çµ¥½ºÅ©');
+VALUES('dk_143', 'A2', 'ìžë™ëª¨ì…˜ë°ìŠ¤í¬');
 
 
--- ### Áß¿ä 3: °í°´°ú »óÇ°Å×ÀÌºí¿¡ ¾ø´Â CUSTOM_ID, pcode ÄÃ·³°ªÀ» »ç¿ëÇÏ¸é ¾ÈµË´Ï´Ù.
+-- ### ì¤‘ìš” 3: ê³ ê°ê³¼ ìƒí’ˆí…Œì´ë¸”ì— ì—†ëŠ” CUSTOM_ID, pcode ì»¬ëŸ¼ê°’ì„ ì‚¬ìš©í•˜ë©´ ì•ˆë©ë‹ˆë‹¤.
 INSERT INTO IDEV.TBL_BUY(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES('mina01', 'IPAD011', 1, '2022-02-06');
 
 
--- ±¸¸ÅÁ¤º¸ ÀÔ·Â
--- ±è¹Ì³ª°¡ ¾ÆÀÌÆÐµå 1°³¸¦ ¾îÁ¦ ±¸¸Å
+-- êµ¬ë§¤ì •ë³´ ìž…ë ¥
+-- ê¹€ë¯¸ë‚˜ê°€ ì•„ì´íŒ¨ë“œ 1ê°œë¥¼ ì–´ì œ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES('min012', 'd_143', 1, sysdate);
 
--- È«±æµ¿ÀÌ ¾ÆÀÌÆÐµå 2°³¸¦ ¿À´Ã ±¸¸Å
+-- í™ê¸¸ë™ì´ ì•„ì´íŒ¨ë“œ 2ê°œë¥¼ ì˜¤ëŠ˜ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES('hongGD', 'IPAD011', 2, '2022-02-07');
 
--- ÀÌ³ª³ª°¡ ÂüÄ¡¼±¹°¼¼Æ® 3°³ ¾îÁ¦ ±¸¸Å
+-- ì´ë‚˜ë‚˜ê°€ ì°¸ì¹˜ì„ ë¬¼ì„¸íŠ¸ 3ê°œ ì–´ì œ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES('wonder', 'DOWON123a', 3, '2022-02-06');
 
--- ±è¹Ì³ª°¡ ¸ð¼Çµ¥½ºÅ© 1°³ ¿À´Ã ±¸¸Å
+-- ê¹€ë¯¸ë‚˜ê°€ ëª¨ì…˜ë°ìŠ¤í¬ 1ê°œ ì˜¤ëŠ˜ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES('mina012', 'dk_143', 1, '2022-02-07');
 
--- ¹Ú¸ð¸ð°¡ ÂüÄ¡¼±¹°¼¼Æ® 2°³ ¿À´Ã ±¸¸Å
+-- ë°•ëª¨ëª¨ê°€ ì°¸ì¹˜ì„ ë¬¼ì„¸íŠ¸ 2ê°œ ì˜¤ëŠ˜ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES('twice', 'DOWON123a', 2, '2022-02-07');
 

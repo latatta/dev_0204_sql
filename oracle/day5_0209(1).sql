@@ -1,14 +1,14 @@
--- µ¿µî Á¶ÀÎ Çü½Ä 1
+-- ë™ë“± ì¡°ì¸ í˜•ì‹ 1
 SELECT * FROM "TBL_PRODUCT#" tp , "TBL_BUY#" tb 
  	WHERE tp.PCODE = tb.PCODE ;
  		 
--- µ¿µî Á¶ÀÎ Çü½Ä 2
+-- ë™ë“± ì¡°ì¸ í˜•ì‹ 2
 SELECT * FROM "TBL_PRODUCT#" tp 
 	JOIN "TBL_BUY#" tb
 	ON tp.PCODE = tb.PCODE ;  	
 		 
 		
--- º¹½À : ¾ÆÀÌÆÐµå('IPAD012')¸¦ ±¸¸ÅÇÑ »ç¿ëÀÚ ÀÌ¸§°ú ±¸¸Å³¯Â¥ Á¶È¸
+-- ë³µìŠµ : ì•„ì´íŒ¨ë“œ('IPAD012')ë¥¼ êµ¬ë§¤í•œ ì‚¬ìš©ìž ì´ë¦„ê³¼ êµ¬ë§¤ë‚ ì§œ ì¡°íšŒ
 SELECT tc.NAME, tb.BUY_DATE FROM "TBL_BUY#" tb, "TBL_CUSTOMER#" tc  
 	WHERE tC.CUSTOM_ID = tb.CUSTOM_ID AND PCODE = 'IPAD011';
 
@@ -19,54 +19,54 @@ SELECT tc.NAME, tb.BUY_DATE FROM "TBL_BUY#" tb JOIN "TBL_CUSTOMER#" tc
 
 
 -------------------------------------------------------------------------------------------------------------------
--- day5 : alter table Çü½Ä
--- Å×½ºÆ®¿ë Å×ÀÌºí : ÄÃ·³¸í, °ªµéÀº ÀÇ¹Ì ¾ø½À´Ï´Ù. Çü½Ä°ú Á¦¾àÁ¶°Ç¸¸ ÁÖÀÇÇÏ¼¼¿ä.
+-- day5 : alter table í˜•ì‹
+-- í…ŒìŠ¤íŠ¸ìš© í…Œì´ë¸” : ì»¬ëŸ¼ëª…, ê°’ë“¤ì€ ì˜ë¯¸ ì—†ìŠµë‹ˆë‹¤. í˜•ì‹ê³¼ ì œì•½ì¡°ê±´ë§Œ ì£¼ì˜í•˜ì„¸ìš”.
 CREATE TABLE tbl# (
 	acol varchar2(30) NOT NULL,
 	bcol varchar2(10),
 	ccol number(3)
 );
 
-INSERT INTO tbl#(ccol) values(12);						-- ¿À·ù : NOT NULL ÄÃ·³(acol) °ªÀÌ ÀúÀå ¾ÈµÊ
-INSERT INTO tbl#(bcol, ccol) values('xytz', 12);		-- ¿À·ù : NOT NULL ÄÃ·³(acol) °ªÀÌ ÀúÀå ¾ÈµÊ
-INSERT INTO tbl#(acol, ccol) values('main', 12);		-- Á¤»ó½ÇÇà
+INSERT INTO tbl#(ccol) values(12);						-- ì˜¤ë¥˜ : NOT NULL ì»¬ëŸ¼(acol) ê°’ì´ ì €ìž¥ ì•ˆë¨
+INSERT INTO tbl#(bcol, ccol) values('xytz', 12);		-- ì˜¤ë¥˜ : NOT NULL ì»¬ëŸ¼(acol) ê°’ì´ ì €ìž¥ ì•ˆë¨
+INSERT INTO tbl#(acol, ccol) values('main', 12);		-- ì •ìƒì‹¤í–‰
 
--- ÄÃ·³ Ãß°¡
+-- ì»¬ëŸ¼ ì¶”ê°€
 ALTER table tbl# ADD (dcol timestamp DEFAULT sysdate);
 SELECT * FROM tbl#;
 
--- ÄÃ·³ º¯°æ
+-- ì»¬ëŸ¼ ë³€ê²½
 ALTER table tbl# MODIFY (ccol NUMBER(3) DEFAULT '0');
-INSERT INTO tbl#(acol, bcol) values('main2', 'asdf');		-- ccolÀÌ 0
+INSERT INTO tbl#(acol, bcol) values('main2', 'asdf');		-- ccolì´ 0
 
--- ÄÃ·³ Á¦°Å(drop)	
+-- ì»¬ëŸ¼ ì œê±°(drop)	
 ALTER TABLE tbl# DROP COLUMN dcol;
 
--- Á¦¾àÁ¶°Ç Ãß°¡(Á¦¾àÁ¶°Ç ÀÌ¸§ ÁöÁ¤ ÇÊ¿ä)
+-- ì œì•½ì¡°ê±´ ì¶”ê°€(ì œì•½ì¡°ê±´ ì´ë¦„ ì§€ì • í•„ìš”)
 ALTER TABLE tbl# ADD CONSTRAINT pk_tbl# PRIMARY KEY (acol);
--- Áßº¹°ªÀÌ ÀÖ´Â °æ¿ì(¹«°á¼º À§¹Ý) Áßº¹µÇ´Â ÇàÀ» »èÁ¦ÇÏ°í ±âº»Å° Ãß°¡ÇÕ´Ï´Ù.
+-- ì¤‘ë³µê°’ì´ ìžˆëŠ” ê²½ìš°(ë¬´ê²°ì„± ìœ„ë°˜) ì¤‘ë³µë˜ëŠ” í–‰ì„ ì‚­ì œí•˜ê³  ê¸°ë³¸í‚¤ ì¶”ê°€í•©ë‹ˆë‹¤.
 DELETE FROM tbl# WHERE acol = 'main2' AND ccol = 0;
 
--- ±âÁ¸ Á¦¾àÁ¶°ÇÀº º¯°æ ¸í·É ¾ø½À´Ï´Ù. -> ±âÁ¸ Á¦¾àÁ¶°Ç Á¦°ÅÇÏ°í ´Ù½Ã »ý¼ºÇØ¾ßÇÔ
-ALTER TABLE tbl# DROP CONSTRAINT pk_tbl#;		-- Á¦¾àÁ¶°Ç Á¦°Å
+-- ê¸°ì¡´ ì œì•½ì¡°ê±´ì€ ë³€ê²½ ëª…ë ¹ ì—†ìŠµë‹ˆë‹¤. -> ê¸°ì¡´ ì œì•½ì¡°ê±´ ì œê±°í•˜ê³  ë‹¤ì‹œ ìƒì„±í•´ì•¼í•¨
+ALTER TABLE tbl# DROP CONSTRAINT pk_tbl#;		-- ì œì•½ì¡°ê±´ ì œê±°
 
--- tbl# Å×ÀÌºí¿¡ age ÄÃ·³ »ý¼º. check Á¦¾àÁ¶°Ç : 16 ÀÌ»ó 90 ÀÌÇÏÀÇ °ª
+-- tbl# í…Œì´ë¸”ì— age ì»¬ëŸ¼ ìƒì„±. check ì œì•½ì¡°ê±´ : 16 ì´ìƒ 90 ì´í•˜ì˜ ê°’
 ALTER TABLE "TBL#" ADD age number(3) CHECK (age BETWEEN 16 AND 90);		-- age >= 16 AND age <= 90
-INSERT INTO "TBL#" (acol, age) values ('app',23);	-- ½ÇÇà
-INSERT INTO "TBL#" (acol, age) values ('app',99);	-- ¿À·ù
+INSERT INTO "TBL#" (acol, age) values ('app',23);	-- ì‹¤í–‰
+INSERT INTO "TBL#" (acol, age) values ('app',99);	-- ì˜¤ë¥˜
 
--- tbl# Å×ÀÌºí¿¡ gender ÄÃ·³ »ý¼º. check Á¦¾àÁ¶°Ç : 'M', 'F'
+-- tbl# í…Œì´ë¸”ì— gender ì»¬ëŸ¼ ìƒì„±. check ì œì•½ì¡°ê±´ : 'M', 'F'
 ALTER TABLE "TBL#" ADD gender varchar2(3) CHECK (gender IN ('M', 'F'));
 INSERT INTO "TBL#" (acol, gender) values ('momo', 'F');
-INSERT INTO "TBL#" (acol, gender) values ('momo', 'X');		-- Á¦¾àÁ¶°Ç À§¹Ý ¿À·ù
+INSERT INTO "TBL#" (acol, gender) values ('momo', 'X');		-- ì œì•½ì¡°ê±´ ìœ„ë°˜ ì˜¤ë¥˜
 
 
 
--- SELECT ¿¡ »ç¿ëÇÏ´Â ¿À¶óÅ¬ ÇÔ¼ö
--- Á¶È¸°á°ú¸¦ Á¶ÀÛÇÏ´Â ÇÔ¼ö : ¿¹½Ã age ÄÃ·³°ªÀÌ null ÀÏ¶§ 0, gender 'M'ÀÌ¸é ³²¼º, 'F'ÀÌ¸é ¿©¼º
+-- SELECT ì— ì‚¬ìš©í•˜ëŠ” ì˜¤ë¼í´ í•¨ìˆ˜
+-- ì¡°íšŒê²°ê³¼ë¥¼ ì¡°ìž‘í•˜ëŠ” í•¨ìˆ˜ : ì˜ˆì‹œ age ì»¬ëŸ¼ê°’ì´ null ì¼ë•Œ 0, gender 'M'ì´ë©´ ë‚¨ì„±, 'F'ì´ë©´ ì—¬ì„±
 SELECT * FROM tbl#;
-SELECT acol, nvl(age, 0) AS age2, decode(gender, 'M', '³²¼º', 'F', '¿©¼º') AS gender2 FROM "TBL#" t ;
--- nvlÀº null value, ÄÃ·³¸í º°ÄªÀº as Å°¿öµå¸¦ ¾²°í »ý·«ÇÒ ¼ö ÀÖ½À´Ï´Ù.
+SELECT acol, nvl(age, 0) AS age2, decode(gender, 'M', 'ë‚¨ì„±', 'F', 'ì—¬ì„±') AS gender2 FROM "TBL#" t ;
+-- nvlì€ null value, ì»¬ëŸ¼ëª… ë³„ì¹­ì€ as í‚¤ì›Œë“œë¥¼ ì“°ê³  ìƒëžµí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 
 

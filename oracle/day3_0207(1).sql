@@ -1,10 +1,10 @@
--- µ¥ÀÌÅÍ Å¸ÀÔ number ¿¬½À Å×ÀÌºí
--- number : ÀÚ¹ÙÀÇ byte, short, int, long, float, double¿¡ ÇØ´ç
--- 			number(ÀüÃ¼ÀÚ¸´¼ö, ¼Ò¼öÁ¡ÀÚ¸®¼ö)
+-- ë°ì´í„° íƒ€ìž… number ì—°ìŠµ í…Œì´ë¸”
+-- number : ìžë°”ì˜ byte, short, int, long, float, doubleì— í•´ë‹¹
+-- 			number(ì „ì²´ìžë¦¿ìˆ˜, ì†Œìˆ˜ì ìžë¦¬ìˆ˜)
 
--- table_number Å×ÀÌºíÀÌ¸§
+-- table_number í…Œì´ë¸”ì´ë¦„
 CREATE TABLE table_number(
-	col1 NUMBER,			-- ÀÚ¸´¼ö¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ÃÖ´ë 38ÀÚ¸® ÀÔ´Ï´Ù. (ÀÚ¹ÙÀÇ BigDecimal)
+	col1 NUMBER,			-- ìžë¦¿ìˆ˜ë¥¼ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ ìµœëŒ€ 38ìžë¦¬ ìž…ë‹ˆë‹¤. (ìžë°”ì˜ BigDecimal)
 	col2 number(5),
 	col3 number(7,2),
 	col4 number(2,5)
@@ -13,29 +13,29 @@ CREATE TABLE table_number(
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 12345, 12345.67, 0.00012);
 
--- col2 Ä®·³ÀÇ ÀÚ¸´¼ö°¡ 6°³ : ¿À·ù
+-- col2 ì¹¼ëŸ¼ì˜ ìžë¦¿ìˆ˜ê°€ 6ê°œ : ì˜¤ë¥˜
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 123456, 12345.68, 0.00012);
 
--- col3 Ä®·³Àº ¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸´¼ö°¡ 2°³ : ¹Ý¿Ã¸²
+-- col3 ì¹¼ëŸ¼ì€ ì†Œìˆ˜ì  ì´í•˜ ìžë¦¿ìˆ˜ê°€ 2ê°œ : ë°˜ì˜¬ë¦¼
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 12345, 12345.678, 0.00012);
 
--- col3 Ä®·³ ÀüÃ¼ ÀÚ¸´¼ö 7°³ : ¼Ò¼öÁ¡ÀÌÇÏ Ç×»ó 2°³, ±×¸®°í Á¤¼öÀÚ¸´¼ö 5°³ : ÀÚ¸®¼ö ÃÊ°ú ¿À·ù 
+-- col3 ì¹¼ëŸ¼ ì „ì²´ ìžë¦¿ìˆ˜ 7ê°œ : ì†Œìˆ˜ì ì´í•˜ í•­ìƒ 2ê°œ, ê·¸ë¦¬ê³  ì •ìˆ˜ìžë¦¿ìˆ˜ 5ê°œ : ìžë¦¬ìˆ˜ ì´ˆê³¼ ì˜¤ë¥˜ 
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 12345, 123456.67, 0.00012);
 
--- col4 Ä®·³Àº number(2, 5) : ÀüÃ¼ À¯È¿ÀÚ¸´¼ö : 5°³,
--- 							 ÀÌ¶§ Ç×»ó À¯È¿ÀÚ¸´¼ö 2°³ ÃÖ´ë 2°³(0 Æ÷ÇÔ °¡´É), ÃÖ¼Ò ³ª¸ÓÁö 3°³´Â ¹«Á¶°Ç 0
+-- col4 ì¹¼ëŸ¼ì€ number(2, 5) : ì „ì²´ ìœ íš¨ìžë¦¿ìˆ˜ : 5ê°œ,
+-- 							 ì´ë•Œ í•­ìƒ ìœ íš¨ìžë¦¿ìˆ˜ 2ê°œ ìµœëŒ€ 2ê°œ(0 í¬í•¨ ê°€ëŠ¥), ìµœì†Œ ë‚˜ë¨¸ì§€ 3ê°œëŠ” ë¬´ì¡°ê±´ 0
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 12345, 12345.67, 0.0000123);
 
--- col4 Ä®·³Àº number(2, 5) : ³ª¸ÓÁö 3°³´Â À¯È¿ÀÚ¸´¼ö 0 -> ¾Æ´Ï¸é ¿À·ù
+-- col4 ì¹¼ëŸ¼ì€ number(2, 5) : ë‚˜ë¨¸ì§€ 3ê°œëŠ” ìœ íš¨ìžë¦¿ìˆ˜ 0 -> ì•„ë‹ˆë©´ ì˜¤ë¥˜
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 12345, 12345.67, 0.0012);
 INSERT INTO IDEV.TABLE_NUMBER(COL1, COL2, COL3, COL4)
 VALUES(1234567, 12345, 12345.67, 0.00123);
 
--- 0.00012300¿¡¼­ À¯È¿ÇÑ ¼ýÀÚ´Â 0.000123, 123 µÚ¿¡ 00Àº À¯È¿ÇÑ °ªÀÌ ¾Æ´Ô
+-- 0.00012300ì—ì„œ ìœ íš¨í•œ ìˆ«ìžëŠ” 0.000123, 123 ë’¤ì— 00ì€ ìœ íš¨í•œ ê°’ì´ ì•„ë‹˜
 
 

@@ -1,31 +1,31 @@
--- ### Áß¿ä1 : custom Å×ÀÌºíÀÇ Çà(row)µ¥ÀÌÅÍ¸¦ ±¸ºÐÇÑ custom_id, PCODE ´Â Áßº¹µÇ¸é ¾ÈµË´Ï´Ù.
---				¤¤ ±âº»Å° ÄÃ·³À» Á¤ÇÕ´Ï´Ù.(Áßº¹µÈ °ªÀº Çã¿ëÀÌ ¾ÈµË´Ï´Ù.)
--- 				¤¤ ±âº»Å°´Â Å×ÀÌºíÀÇ Çà(row)À» ½Äº°ÇÏ´Â°ÍÀÌ ¸ñÀûÀÔ´Ï´Ù.
--- 				¤¤ SELECT ¸¦ ±âº»Å°°ªÀ¸·Î °Ë»öÇÒ ¶§ ¿ÀÁ÷ 1°³ÀÇ Çà°á°ú°¡ Á¶È¸µË´Ï´Ù.
+-- ### ì¤‘ìš”1 : custom í…Œì´ë¸”ì˜ í–‰(row)ë°ì´í„°ë¥¼ êµ¬ë¶„í•œ custom_id, PCODE ëŠ” ì¤‘ë³µë˜ë©´ ì•ˆë©ë‹ˆë‹¤.
+--				ã„´ ê¸°ë³¸í‚¤ ì»¬ëŸ¼ì„ ì •í•©ë‹ˆë‹¤.(ì¤‘ë³µëœ ê°’ì€ í—ˆìš©ì´ ì•ˆë©ë‹ˆë‹¤.)
+-- 				ã„´ ê¸°ë³¸í‚¤ëŠ” í…Œì´ë¸”ì˜ í–‰(row)ì„ ì‹ë³„í•˜ëŠ”ê²ƒì´ ëª©ì ìž…ë‹ˆë‹¤.
+-- 				ã„´ SELECT ë¥¼ ê¸°ë³¸í‚¤ê°’ìœ¼ë¡œ ê²€ìƒ‰í•  ë•Œ ì˜¤ì§ 1ê°œì˜ í–‰ê²°ê³¼ê°€ ì¡°íšŒë©ë‹ˆë‹¤.
 SELECT * FROM "TBL_CUSTOMER#" tc WHERE custom_id = 'mina012';
 
 
--- ### Áß¿ä 2: ¿¹¸¦ µé¸é, price, quantity µîÀÇ ÄÃ·³Àº nullÀÌ µÇ¸é ¾ÈµË´Ï´Ù(²À ÇÊ¼ö µ¥ÀÌÅÍ·Î ÀúÀåµÇ¾î¾ß ÇÕ´Ï´Ù).
--- 				¤¤ NOT NULL ÄÃ·³À¸·Î ¼³Á¤(NULLÀúÀå ¾ÈµÊ)
+-- ### ì¤‘ìš” 2: ì˜ˆë¥¼ ë“¤ë©´, price, quantity ë“±ì˜ ì»¬ëŸ¼ì€ nullì´ ë˜ë©´ ì•ˆë©ë‹ˆë‹¤(ê¼­ í•„ìˆ˜ ë°ì´í„°ë¡œ ì €ìž¥ë˜ì–´ì•¼ í•©ë‹ˆë‹¤).
+-- 				ã„´ NOT NULL ì»¬ëŸ¼ìœ¼ë¡œ ì„¤ì •(NULLì €ìž¥ ì•ˆë¨)
 
--- ### Áß¿ä 3: °í°´°ú »óÇ°Å×ÀÌºí¿¡ ¾ø´Â CUSTOM_ID, pcode ÄÃ·³°ªÀ» »ç¿ëÇÏ¸é ¾ÈµË´Ï´Ù.
--- 				¤¤ ¿Ü·¡Å° ÄÃ·³À» Á¤ÇÕ´Ï´Ù.(´Ù¸¥ Å×ÀÌºí¿¡¼­ °ªÀ» ÂüÁ¶ÇÕ´Ï´Ù. NULL Çã¿ë ¾ÈÇÕ´Ï´Ù.)
---				¤¤ ¿Ü·¡Å°´Â ÄÃ·³ÀÇ µ¥ÀÌÅÍ°¡ ÂüÁ¶°ª(´Ù¸¥ Å×ÀÌºíÀÇ ÄÃ·³)À» »ç¿ëÇÏ°Ô ÇÏ´Â°ÍÀÌ ¸ñÀûÀÔ´Ï´Ù.
+-- ### ì¤‘ìš” 3: ê³ ê°ê³¼ ìƒí’ˆí…Œì´ë¸”ì— ì—†ëŠ” CUSTOM_ID, pcode ì»¬ëŸ¼ê°’ì„ ì‚¬ìš©í•˜ë©´ ì•ˆë©ë‹ˆë‹¤.
+-- 				ã„´ ì™¸ëž˜í‚¤ ì»¬ëŸ¼ì„ ì •í•©ë‹ˆë‹¤.(ë‹¤ë¥¸ í…Œì´ë¸”ì—ì„œ ê°’ì„ ì°¸ì¡°í•©ë‹ˆë‹¤. NULL í—ˆìš© ì•ˆí•©ë‹ˆë‹¤.)
+--				ã„´ ì™¸ëž˜í‚¤ëŠ” ì»¬ëŸ¼ì˜ ë°ì´í„°ê°€ ì°¸ì¡°ê°’(ë‹¤ë¥¸ í…Œì´ë¸”ì˜ ì»¬ëŸ¼)ì„ ì‚¬ìš©í•˜ê²Œ í•˜ëŠ”ê²ƒì´ ëª©ì ìž…ë‹ˆë‹¤.
 
--- À§ÀÇ NOT NULL, ±âº»Å°, ¿Ü·¡Å°´Â ´ëÇ¥ÀûÀÎ Á¦¾àÁ¶°Ç(CONSRAINTS) ¼³Á¤ÀÔ´Ï´Ù.
--- Á¦¾àÁ¶°ÇÀ» ¼³Á¤ÇÑ Å×ÀÌºí·Î »ý¼ºÇØ º¾´Ï´Ù.
+-- ìœ„ì˜ NOT NULL, ê¸°ë³¸í‚¤, ì™¸ëž˜í‚¤ëŠ” ëŒ€í‘œì ì¸ ì œì•½ì¡°ê±´(CONSRAINTS) ì„¤ì •ìž…ë‹ˆë‹¤.
+-- ì œì•½ì¡°ê±´ì„ ì„¤ì •í•œ í…Œì´ë¸”ë¡œ ìƒì„±í•´ ë´…ë‹ˆë‹¤.
 
--- °í°´ Å×ÀÌºí
+-- ê³ ê° í…Œì´ë¸”
 CREATE TABLE tbl_customer# (
-	custom_id varchar2(20) PRIMARY KEY,		-- ¿µ¹®/¼ýÀÚ/±âÈ£
-	name nvarchar2 (20) NOT NULL ,		-- ÇÑ±Ûµî ´Ù±¹¾î¹®ÀÚ °³¼ö
+	custom_id varchar2(20) PRIMARY KEY,		-- ì˜ë¬¸/ìˆ«ìž/ê¸°í˜¸
+	name nvarchar2 (20) NOT NULL ,		-- í•œê¸€ë“± ë‹¤êµ­ì–´ë¬¸ìž ê°œìˆ˜
 	email varchar2 (20),
 	age number(3),
 	reg_date timestamp DEFAULT sysdate
 );
 
--- »óÇ° Å×ÀÌºí : »óÇ°ÄÚµå(°¡º¯±æÀÌ 20ÀÚ¸®), Ä«Å×°í¸®(°íÁ¤±æÀÌ 2ÀÚ¸®)
--- 										A1 : ÀüÀÚÁ¦Ç°, B1 : ½ÄÇ°
+-- ìƒí’ˆ í…Œì´ë¸” : ìƒí’ˆì½”ë“œ(ê°€ë³€ê¸¸ì´ 20ìžë¦¬), ì¹´í…Œê³ ë¦¬(ê³ ì •ê¸¸ì´ 2ìžë¦¬)
+-- 										A1 : ì „ìžì œí’ˆ, B1 : ì‹í’ˆ
 CREATE TABLE tbl_product# (
 	pcode varchar2 (20) CONSTRAINT pk_product PRIMARY KEY,
 	category char(2),
@@ -33,99 +33,99 @@ CREATE TABLE tbl_product# (
 	price number(9) NOT NULL
 );
 
--- ±¸¸Å Å×ÀÌºí : ¾î´À °í°´ÀÌ ¹«½¼ »óÇ°À» ±¸ÀÔÇÏ´Â°¡?
--- ±¸¸ÅÅ×ÀÌºíÀÇ ±âº»Å°´Â º°µµ·Î ÄÃ·³À» Ãß°¡ÇÕ´Ï´Ù.
+-- êµ¬ë§¤ í…Œì´ë¸” : ì–´ëŠ ê³ ê°ì´ ë¬´ìŠ¨ ìƒí’ˆì„ êµ¬ìž…í•˜ëŠ”ê°€?
+-- êµ¬ë§¤í…Œì´ë¸”ì˜ ê¸°ë³¸í‚¤ëŠ” ë³„ë„ë¡œ ì»¬ëŸ¼ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
 CREATE TABLE tbl_buy# (
 	buy_seq number(8),
 	custom_id varchar2 (20),
 	pcode varchar2 (20),
-	quantity number (5) NOT NULL ,		-- ¼ö·®
+	quantity number (5) NOT NULL ,		-- ìˆ˜ëŸ‰
 	buy_date timestamp,
-	-- Á¦¾àÁ¶°ÇÅ°¿öµå Á¦¾àÁ¶°ÇÀÌ¸§ Á¦¾àÁ¶°ÇÀ¯Çü (Àû¿ëµÇ´ÂÄÃ·³)
+	-- ì œì•½ì¡°ê±´í‚¤ì›Œë“œ ì œì•½ì¡°ê±´ì´ë¦„ ì œì•½ì¡°ê±´ìœ í˜• (ì ìš©ë˜ëŠ”ì»¬ëŸ¼)
 	CONSTRAINT pk_buy_seq PRIMARY KEY (buy_seq), 
-	CONSTRAINT fk_custom_id FOREIGN KEY (custom_id) 	-- ÀÌ Å×ÀÌºíÀÇ ÄÃ·³¸í
-		REFERENCES tbl_customer# (custom_id),		-- ÂüÁ¶Å×ÀÌºí°ú ±× ÄÃ·³¸í
+	CONSTRAINT fk_custom_id FOREIGN KEY (custom_id) 	-- ì´ í…Œì´ë¸”ì˜ ì»¬ëŸ¼ëª…
+		REFERENCES tbl_customer# (custom_id),		-- ì°¸ì¡°í…Œì´ë¸”ê³¼ ê·¸ ì»¬ëŸ¼ëª…
 	CONSTRAINT fk_pcode FOREIGN KEY (pcode) 
 		REFERENCES tbl_product# (pcode)
-	-- ¿Ü·¡Å°·Î ¼³Á¤µÉ ¼ö ÀÖ´Â ÄÃ·³Àº ±âº»Å° ¶Ç´Â unique(À¯ÀÏÇÑ)¿¡ ´ëÇØ¼­¸¸ °¡´ÉÇÕ´Ï´Ù.
-	-- ¿Ü·¡Å° ÄÃ·³Àº ÂüÁ¶(REFERENCES)Å×ÀÌºíÀÇ ÄÃ·³°ª Áß ÇÏ³ª·Î ÀúÀåÇÒ ¼ö ÀÖ½À´Ï´Ù.
+	-- ì™¸ëž˜í‚¤ë¡œ ì„¤ì •ë  ìˆ˜ ìžˆëŠ” ì»¬ëŸ¼ì€ ê¸°ë³¸í‚¤ ë˜ëŠ” unique(ìœ ì¼í•œ)ì— ëŒ€í•´ì„œë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.
+	-- ì™¸ëž˜í‚¤ ì»¬ëŸ¼ì€ ì°¸ì¡°(REFERENCES)í…Œì´ë¸”ì˜ ì»¬ëŸ¼ê°’ ì¤‘ í•˜ë‚˜ë¡œ ì €ìž¥í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 );
 
 ---------------------------------------------------------------------------------
--- µ¥ÀÌÅÍÀÇ Ãß°¡ : INSERT 
--- °í°´Á¤º¸ ÀÔ·Â
+-- ë°ì´í„°ì˜ ì¶”ê°€ : INSERT 
+-- ê³ ê°ì •ë³´ ìž…ë ¥
 INSERT INTO IDEV.TBL_CUSTOMER#(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('mina012', '±è¹Ì³ª', 'kimm@gmail.com', 20, sysdate);
+VALUES('mina012', 'ê¹€ë¯¸ë‚˜', 'kimm@gmail.com', 20, sysdate);
 INSERT INTO IDEV.TBL_CUSTOMER#(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('hongGD', 'È«±æµ¿', 'gil@korea.com', 32, sysdate);
+VALUES('hongGD', 'í™ê¸¸ë™', 'gil@korea.com', 32, sysdate);
 INSERT INTO IDEV.TBL_CUSTOMER#(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('twice', '¹Ú¸ð¸ð', 'momo@daum.net', 29, sysdate);
+VALUES('twice', 'ë°•ëª¨ëª¨', 'momo@daum.net', 29, sysdate);
 INSERT INTO IDEV.TBL_CUSTOMER#(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('wonder', 'ÀÌ³ª³ª', 'lee@naver.com', 40, sysdate);
+VALUES('wonder', 'ì´ë‚˜ë‚˜', 'lee@naver.com', 40, sysdate);
 
--- ### Áß¿ä1 : custom Å×ÀÌºíÀÇ Çà(row)µ¥ÀÌÅÍ¸¦ ±¸ºÐÇÑ custom_id, PCODE ´Â Áßº¹µÇ¸é ¾ÈµË´Ï´Ù.
+-- ### ì¤‘ìš”1 : custom í…Œì´ë¸”ì˜ í–‰(row)ë°ì´í„°ë¥¼ êµ¬ë¶„í•œ custom_id, PCODE ëŠ” ì¤‘ë³µë˜ë©´ ì•ˆë©ë‹ˆë‹¤.
 INSERT INTO IDEV.TBL_CUSTOMER#(CUSTOM_ID, NAME, EMAIL, AGE, REG_DATE)
-VALUES('wonder', 'ÃÖ¸ð¸ð', 'choi@naver.com', 33, sysdate);
+VALUES('wonder', 'ìµœëª¨ëª¨', 'choi@naver.com', 33, sysdate);
 
 SELECT * FROM TBL_CUSTOMER# tc;
 
 
--- »óÇ°Á¤º¸ ÀÔ·Â
+-- ìƒí’ˆì •ë³´ ìž…ë ¥
 INSERT INTO IDEV.TBL_PRODUCT#(PCODE, CATEGORY, PNAME, PRICE)
-VALUES('IPAD011', 'A1', '¾ÆÀÌÆÐµå10', 880000);
+VALUES('IPAD011', 'A1', 'ì•„ì´íŒ¨ë“œ10', 880000);
 INSERT INTO IDEV.TBL_PRODUCT#(PCODE, CATEGORY, PNAME, PRICE)
-VALUES('DOWON123a', 'B1', 'µ¿¿øÂüÄ¡¼±¹°¼¼Æ®', 54000);
+VALUES('DOWON123a', 'B1', 'ë™ì›ì°¸ì¹˜ì„ ë¬¼ì„¸íŠ¸', 54000);
 INSERT INTO IDEV.TBL_PRODUCT#(PCODE, CATEGORY, PNAME, PRICE)
-VALUES('dk_143', 'A2', '¸ð¼Çµ¥½ºÅ©', 234500);
+VALUES('dk_143', 'A2', 'ëª¨ì…˜ë°ìŠ¤í¬', 234500);
 
--- ### Áß¿ä 2: ¿¹¸¦ µé¸é, price, quantity µîÀÇ ÄÃ·³Àº nullÀÌ µÇ¸é ¾ÈµË´Ï´Ù(²À ÇÊ¼ö µ¥ÀÌÅÍ·Î ÀúÀåµÇ¾î¾ß ÇÕ´Ï´Ù).
+-- ### ì¤‘ìš” 2: ì˜ˆë¥¼ ë“¤ë©´, price, quantity ë“±ì˜ ì»¬ëŸ¼ì€ nullì´ ë˜ë©´ ì•ˆë©ë‹ˆë‹¤(ê¼­ í•„ìˆ˜ ë°ì´í„°ë¡œ ì €ìž¥ë˜ì–´ì•¼ í•©ë‹ˆë‹¤).
 INSERT INTO IDEV.TBL_PRODUCT#(PCODE, CATEGORY, PNAME)
-VALUES('dk_143', 'A2', 'ÀÚµ¿¸ð¼Çµ¥½ºÅ©');
+VALUES('dk_143', 'A2', 'ìžë™ëª¨ì…˜ë°ìŠ¤í¬');
 
 
 
 
 
--- ¿À¶óÅ¬¿¡¼­´Â ÀÏ·Ã¹øÈ£¸¦ ÀÚµ¿À¸·Î Áõ°¡ÇØ¼­ »ç¿ëÇÏ°Ô ÇÒ¼ö ÀÖ´Â ½ÃÄö½º ±â´ÉÀÌ ÀÖ½À´Ï´Ù.
+-- ì˜¤ë¼í´ì—ì„œëŠ” ì¼ë ¨ë²ˆí˜¸ë¥¼ ìžë™ìœ¼ë¡œ ì¦ê°€í•´ì„œ ì‚¬ìš©í•˜ê²Œ í• ìˆ˜ ìžˆëŠ” ì‹œí€€ìŠ¤ ê¸°ëŠ¥ì´ ìžˆìŠµë‹ˆë‹¤.
 CREATE SEQUENCE tbl_buy_seq;
--- ÇÑ¹ø ¸¸µé¾îÁ®¼­ »ç¿ëÇÏ´ø ½ÃÄö½º´Â °ªÀ» µÇµ¹¸± ¼ö ¾ø½À´Ï´Ù.
+-- í•œë²ˆ ë§Œë“¤ì–´ì ¸ì„œ ì‚¬ìš©í•˜ë˜ ì‹œí€€ìŠ¤ëŠ” ê°’ì„ ë˜ëŒë¦´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
 
 
--- ½ÃÄö½º »õ·Î ¸¸µé°í ½Í´Ù. »èÁ¦ÇÏ°í ´Ù½Ã ¸¸µé±â
+-- ì‹œí€€ìŠ¤ ìƒˆë¡œ ë§Œë“¤ê³  ì‹¶ë‹¤. ì‚­ì œí•˜ê³  ë‹¤ì‹œ ë§Œë“¤ê¸°
 DROP SEQUENCE tbl_buy_seq ;
--- 		Å×ÀÌºíÀÇ µ¥ÀÌÅÍµµ »èÁ¦ÇÏ°í ´Ù½Ã ½ÃÄö½º »ý¼º/µ¥ÀÌÅÍ Ãß°¡
+-- 		í…Œì´ë¸”ì˜ ë°ì´í„°ë„ ì‚­ì œí•˜ê³  ë‹¤ì‹œ ì‹œí€€ìŠ¤ ìƒì„±/ë°ì´í„° ì¶”ê°€
 
 
 
--- ### Áß¿ä 3: °í°´°ú »óÇ°Å×ÀÌºí¿¡ ¾ø´Â CUSTOM_ID, pcode ÄÃ·³°ªÀ» »ç¿ëÇÏ¸é ¾ÈµË´Ï´Ù.
--- ¿Ü·¡Å°·Î ¼³Á¤µÈ CUSTOM_ID´Â tbl_custom# Å×ÀÌºíÀ» ÂüÁ¶ÇÕ´Ï´Ù. ÂüÁ¶Å×ÀÌºíÀÇ 
--- custom_id ÄÃ·³°ª¿¡ ¾ø´Â °ÍÀ» ÀúÀåÇÒ ¼ö ¾ø½À´Ï´Ù.(¿Ü·¡Å° À§¹Ý)
+-- ### ì¤‘ìš” 3: ê³ ê°ê³¼ ìƒí’ˆí…Œì´ë¸”ì— ì—†ëŠ” CUSTOM_ID, pcode ì»¬ëŸ¼ê°’ì„ ì‚¬ìš©í•˜ë©´ ì•ˆë©ë‹ˆë‹¤.
+-- ì™¸ëž˜í‚¤ë¡œ ì„¤ì •ëœ CUSTOM_IDëŠ” tbl_custom# í…Œì´ë¸”ì„ ì°¸ì¡°í•©ë‹ˆë‹¤. ì°¸ì¡°í…Œì´ë¸”ì˜ 
+-- custom_id ì»¬ëŸ¼ê°’ì— ì—†ëŠ” ê²ƒì„ ì €ìž¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.(ì™¸ëž˜í‚¤ ìœ„ë°˜)
 INSERT INTO IDEV.TBL_BUY#(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE, BUY_SEQ)
 VALUES('min01', 'IPAD011', 1, '2022-02-06', tbl_buy_seq.nextval);
 
--- ¿Ü·¡Å°·Î ¼³Á¤µÈ CUSTOM_ID´Â tbl_custom# Å×ÀÌºíÀ» ÂüÁ¶ÇÕ´Ï´Ù.ÂüÁ¶Å×ÀÌºíÀÇ 
--- PCODE ÄÃ·³°ª¿¡ ¾ø´Â °ÍÀ» ÀúÀåÇÒ ¼ö ¾ø½À´Ï´Ù.
+-- ì™¸ëž˜í‚¤ë¡œ ì„¤ì •ëœ CUSTOM_IDëŠ” tbl_custom# í…Œì´ë¸”ì„ ì°¸ì¡°í•©ë‹ˆë‹¤.ì°¸ì¡°í…Œì´ë¸”ì˜ 
+-- PCODE ì»¬ëŸ¼ê°’ì— ì—†ëŠ” ê²ƒì„ ì €ìž¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.
 INSERT INTO IDEV.TBL_BUY#(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE, BUY_SEQ)
 VALUES('mina012', 'd_14', 1, '2022-02-06', tbl_buy_seq.nextval);
 
--- ±¸¸ÅÁ¤º¸ ÀÔ·Â
--- ±è¹Ì³ª°¡ ¾ÆÀÌÆÐµå 1°³¸¦ ¾îÁ¦ ±¸¸Å
+-- êµ¬ë§¤ì •ë³´ ìž…ë ¥
+-- ê¹€ë¯¸ë‚˜ê°€ ì•„ì´íŒ¨ë“œ 1ê°œë¥¼ ì–´ì œ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY#(buy_seq, CUSTOM_ID, PCODE, QUANTITY, BUY_DATE)
 VALUES(tbl_buy_seq.nextval, 'mina012', 'dk_143', 1, sysdate);
 
--- È«±æµ¿ÀÌ ¾ÆÀÌÆÐµå 2°³¸¦ ¿À´Ã ±¸¸Å
+-- í™ê¸¸ë™ì´ ì•„ì´íŒ¨ë“œ 2ê°œë¥¼ ì˜¤ëŠ˜ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY#(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE, buy_seq)
 VALUES('hongGD', 'IPAD011', 2, '2022-02-07', tbl_buy_seq.nextval);
 
--- ÀÌ³ª³ª°¡ ÂüÄ¡¼±¹°¼¼Æ® 3°³ ¾îÁ¦ ±¸¸Å
+-- ì´ë‚˜ë‚˜ê°€ ì°¸ì¹˜ì„ ë¬¼ì„¸íŠ¸ 3ê°œ ì–´ì œ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY#(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE, buy_seq)
 VALUES('wonder', 'DOWON123a', 3, '2022-02-06', tbl_buy_seq.nextval);
 
--- ±è¹Ì³ª°¡ ¸ð¼Çµ¥½ºÅ© 1°³ ¿À´Ã ±¸¸Å
+-- ê¹€ë¯¸ë‚˜ê°€ ëª¨ì…˜ë°ìŠ¤í¬ 1ê°œ ì˜¤ëŠ˜ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY#(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE, buy_seq)
 VALUES('mina012', 'dk_143', 1, '2022-02-07', tbl_buy_seq.nextval);
 
--- ¹Ú¸ð¸ð°¡ ÂüÄ¡¼±¹°¼¼Æ® 2°³ ¿À´Ã ±¸¸Å
+-- ë°•ëª¨ëª¨ê°€ ì°¸ì¹˜ì„ ë¬¼ì„¸íŠ¸ 2ê°œ ì˜¤ëŠ˜ êµ¬ë§¤
 INSERT INTO IDEV.TBL_BUY#(CUSTOM_ID, PCODE, QUANTITY, BUY_DATE, buy_seq)
 VALUES('twice', 'DOWON123a', 2, '2022-02-07', tbl_buy_seq.nextval);
 
@@ -137,32 +137,32 @@ SELECT * FROM "TBL_PRODUCT#" tp ;
 SELECT * FROM "TBL_BUY#" tb ;
 
 -----------------------------------------------------------------------------
--- ¹®Á¦
--- 1. custom# Å×ÀÌºí¿¡¼­ age °¡ 30¼¼ ÀÌ»ó ¸ðµç ³»¿ë Á¶È¸
+-- ë¬¸ì œ
+-- 1. custom# í…Œì´ë¸”ì—ì„œ age ê°€ 30ì„¸ ì´ìƒ ëª¨ë“  ë‚´ìš© ì¡°íšŒ
 SELECT * FROM "TBL_CUSTOMER#" tc WHERE age >= 30;
 
--- 2. custom# Å×ÀÌºí¿¡¼­ custom_id 'twice' ÀÇ email Á¶È¸
+-- 2. custom# í…Œì´ë¸”ì—ì„œ custom_id 'twice' ì˜ email ì¡°íšŒ
 SELECT email FROM "TBL_CUSTOMER#" tc WHERE CUSTOM_ID = 'twice';
 
--- 3. product# Å×ÀÌºí¿¡¼­ category 'A2' ÀÇ pname Á¶È¸
+-- 3. product# í…Œì´ë¸”ì—ì„œ category 'A2' ì˜ pname ì¡°íšŒ
 SELECT pname FROM "TBL_PRODUCT#" tp WHERE CATEGORY = 'A2';
 
--- 4. product# Å×ÀÌºí¿¡¼­ price ÀÇ ÃÖ°í°ª Á¶È¸
+-- 4. product# í…Œì´ë¸”ì—ì„œ price ì˜ ìµœê³ ê°’ ì¡°íšŒ
 SELECT MAX(price) FROM "TBL_PRODUCT#" tp;
 
--- 5. buy# Å×ÀÌºí¿¡¼­ 'IPAD011' ÃÑ±¸¸Å ¼ö·® Á¶È¸
+-- 5. buy# í…Œì´ë¸”ì—ì„œ 'IPAD011' ì´êµ¬ë§¤ ìˆ˜ëŸ‰ ì¡°íšŒ
 SELECT SUM(QUANTITY) FROM "TBL_BUY#" tb WHERE PCODE = 'IPAD011';
 
--- 6. buy# Å×ÀÌºí¿¡¼­ custom_id 'nayeon' ÀÇ ¸ðµç ³»¿ë Á¶È¸
+-- 6. buy# í…Œì´ë¸”ì—ì„œ custom_id 'nayeon' ì˜ ëª¨ë“  ë‚´ìš© ì¡°íšŒ
 SELECT * FROM "TBL_BUY#" tb WHERE CUSTOM_ID = 'nayeon';
 
--- 7. buy# Å×ÀÌºí¿¡¼­ pcode °¡ '1'ÀÌ Æ÷ÇÔµÈ °Í Á¶È¸
-SELECT * FROM "TBL_BUY#" tb WHERE PCODE = '1';		-- ¿ÏÀüÀÏÄ¡ Á¶È¸
-SELECT * FROM "TBL_BUY#" tb WHERE PCODE LIKE '%1%';		-- ºÎºÐÀÏÄ¡ Á¶È¸. 1À» Æ÷ÇÔ
-SELECT * FROM "TBL_BUY#" tb WHERE PCODE LIKE '1%';		-- ºÎºÐÀÏÄ¡ Á¶È¸. 1·Î ½ÃÀÛ
-SELECT * FROM "TBL_BUY#" tb WHERE PCODE LIKE '%1';		-- ºÎºÐÀÏÄ¡ Á¶È¸. 1·Î ³¡³ª´Â
+-- 7. buy# í…Œì´ë¸”ì—ì„œ pcode ê°€ '1'ì´ í¬í•¨ëœ ê²ƒ ì¡°íšŒ
+SELECT * FROM "TBL_BUY#" tb WHERE PCODE = '1';		-- ì™„ì „ì¼ì¹˜ ì¡°íšŒ
+SELECT * FROM "TBL_BUY#" tb WHERE PCODE LIKE '%1%';		-- ë¶€ë¶„ì¼ì¹˜ ì¡°íšŒ. 1ì„ í¬í•¨
+SELECT * FROM "TBL_BUY#" tb WHERE PCODE LIKE '1%';		-- ë¶€ë¶„ì¼ì¹˜ ì¡°íšŒ. 1ë¡œ ì‹œìž‘
+SELECT * FROM "TBL_BUY#" tb WHERE PCODE LIKE '%1';		-- ë¶€ë¶„ì¼ì¹˜ ì¡°íšŒ. 1ë¡œ ëë‚˜ëŠ”
 
--- 8. buy# Å×ÀÌºí¿¡¼­ pcode¿¡ 'on'À» Æ÷ÇÔÇÏ´Â °Í Á¶È¸
+-- 8. buy# í…Œì´ë¸”ì—ì„œ pcodeì— 'on'ì„ í¬í•¨í•˜ëŠ” ê²ƒ ì¡°íšŒ
 SELECT * FROM "TBL_BUY#" tb WHERE UPPER(PCODE) LIKE '%ON%';		
 
 

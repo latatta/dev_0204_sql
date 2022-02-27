@@ -1,14 +1,14 @@
--- ³¯Â¥Å¸ÀÔ : DATE, TIMESTAMP (timezone ¼³Á¤)
+-- ë‚ ì§œíƒ€ìž… : DATE, TIMESTAMP (timezone ì„¤ì •)
 
 CREATE TABLE table_date(
 	acol DATE,
 	bcol timestamp,
 	ccol timestamp DEFAULT sysdate		
 );
--- °ªÀ» ÁöÁ¤¾ÈÇßÀ» ¶§ ±âº»°ª(default) : sysdate´Â ÇöÀç ³¯Â¥/½Ã°£
--- Å¬¶óÀÌ¾ðÆ® ÄÄÇ»ÅÍÀÇ ½Ã°£Àº current_date
+-- ê°’ì„ ì§€ì •ì•ˆí–ˆì„ ë•Œ ê¸°ë³¸ê°’(default) : sysdateëŠ” í˜„ìž¬ ë‚ ì§œ/ì‹œê°„
+-- í´ë¼ì´ì–¸íŠ¸ ì»´í“¨í„°ì˜ ì‹œê°„ì€ current_date
 
--- ³¯Â¥Çü½ÄÀº ¹®ÀÚ¿­ Å¸ÀÔ°ú ÀÚµ¿Ä³½ºÆÃÀÌ µË´Ï´Ù. '' ¾È¿¡ yyyy-mm-dd hh:mm:ss ¹®ÀÚ¿­ Çü½ÄÀ¸·Î ÀÛ¼º
+-- ë‚ ì§œí˜•ì‹ì€ ë¬¸ìžì—´ íƒ€ìž…ê³¼ ìžë™ìºìŠ¤íŒ…ì´ ë©ë‹ˆë‹¤. '' ì•ˆì— yyyy-mm-dd hh:mm:ss ë¬¸ìžì—´ í˜•ì‹ìœ¼ë¡œ ìž‘ì„±
 INSERT INTO IDEV.TABLE_DATE (ACOL, BCOL)
 VALUES('2022-02-07', '2022-02-07');
 
@@ -16,11 +16,11 @@ SELECT * FROM TABLE_DATE td;
 
 ------------------------------------------------------------------------------------------------
 
--- ¹®ÀÚ¿­ Å¸ÀÔ
--- CHAR(±æÀÌ) : °íÁ¤±æÀÌ, ´ÜÀ§´Â byte
--- VARCHAR(±æÀÌ) : ¿À¶óÅ¬¿¡¼­ Á¸ÀçÇÏ°í »ç¿ëÇÏÁö ¾Ê´Â ¿¹ºñÀÚ·áÇü()
--- VARCHAR2(±æÀÌ) : °¡º¯Çü±æÀÌ ´ÜÀ§ ¹ÙÀÌÆ®, ±æÀÌ´Â ÃÖ´ë±æÀÌÀÌ°í ½ÇÁ¦·Î ¸Þ¸ð¸®´Â µ¥ÀÌÅÍ Å©±â¸¸Å­ Â÷ÁöÇÕ´Ï´Ù. 
--- 					ÃÖ´ë 2000¹ÙÀÌÆ®. UTF-8 ÀÎÄÚµù¿¡¼­ ÇÑ±ÛÀº 3¹ÙÀÌÆ®, ¿µ¹®/¼ýÀÚ/±âÈ£´Â 1¹ÙÀÌÆ®
+-- ë¬¸ìžì—´ íƒ€ìž…
+-- CHAR(ê¸¸ì´) : ê³ ì •ê¸¸ì´, ë‹¨ìœ„ëŠ” byte
+-- VARCHAR(ê¸¸ì´) : ì˜¤ë¼í´ì—ì„œ ì¡´ìž¬í•˜ê³  ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ì˜ˆë¹„ìžë£Œí˜•()
+-- VARCHAR2(ê¸¸ì´) : ê°€ë³€í˜•ê¸¸ì´ ë‹¨ìœ„ ë°”ì´íŠ¸, ê¸¸ì´ëŠ” ìµœëŒ€ê¸¸ì´ì´ê³  ì‹¤ì œë¡œ ë©”ëª¨ë¦¬ëŠ” ë°ì´í„° í¬ê¸°ë§Œí¼ ì°¨ì§€í•©ë‹ˆë‹¤. 
+-- 					ìµœëŒ€ 2000ë°”ì´íŠ¸. UTF-8 ì¸ì½”ë”©ì—ì„œ í•œê¸€ì€ 3ë°”ì´íŠ¸, ì˜ë¬¸/ìˆ«ìž/ê¸°í˜¸ëŠ” 1ë°”ì´íŠ¸
 
 CREATE TABLE table_string(
 	acol char(10),
@@ -29,33 +29,33 @@ CREATE TABLE table_string(
 	dcol nvarchar2(10)
 );
 
--- CHAR Å¸ÀÔ È®ÀÎ - 10¹ÙÀÌÆ®°¡ ´Ù Â÷Áö ¾Ê¾ÒÀ»¶§ (10 - µ¥ÀÌÅÍ)¸¸Å­ µÚ¿¡ °ø¹éÀÌ Ãß°¡µÊ
+-- CHAR íƒ€ìž… í™•ì¸ - 10ë°”ì´íŠ¸ê°€ ë‹¤ ì°¨ì§€ ì•Šì•˜ì„ë•Œ (10 - ë°ì´í„°)ë§Œí¼ ë’¤ì— ê³µë°±ì´ ì¶”ê°€ë¨
 INSERT INTO table_string(acol) VALUES ('abcdefghij');
 INSERT INTO table_string(acol) VALUES ('abcde');
-INSERT INTO table_string(acol) VALUES ('°¡³ª´Ù¶ó');	-- 4±ÛÀÚ * 3¹ÙÀÌÆ® = 12¹ÙÀÌÆ® -> ¿À·ù
-INSERT INTO table_string(acol) VALUES ('°¡³ª´Ù');
+INSERT INTO table_string(acol) VALUES ('ê°€ë‚˜ë‹¤ë¼');	-- 4ê¸€ìž * 3ë°”ì´íŠ¸ = 12ë°”ì´íŠ¸ -> ì˜¤ë¥˜
+INSERT INTO table_string(acol) VALUES ('ê°€ë‚˜ë‹¤');
 
--- VARCHAR2 Å¸ÀÔ È®ÀÎ : CHAR°ú ºñ±³ÇßÀ» ¶§ Ãß°¡µÇ´Â °ø¹é ¾øÀ½
+-- VARCHAR2 íƒ€ìž… í™•ì¸ : CHARê³¼ ë¹„êµí–ˆì„ ë•Œ ì¶”ê°€ë˜ëŠ” ê³µë°± ì—†ìŒ
 INSERT INTO table_string(bcol) VALUES ('abcdefghij');
 INSERT INTO table_string(bcol) VALUES ('abcde');
-INSERT INTO table_string(bcol) VALUES ('°¡³ª´Ù¶ó');	-- 4±ÛÀÚ * 3¹ÙÀÌÆ® = 12¹ÙÀÌÆ® -> ¿À·ù
-INSERT INTO table_string(bcol) VALUES ('°¡³ª´Ù');
+INSERT INTO table_string(bcol) VALUES ('ê°€ë‚˜ë‹¤ë¼');	-- 4ê¸€ìž * 3ë°”ì´íŠ¸ = 12ë°”ì´íŠ¸ -> ì˜¤ë¥˜
+INSERT INTO table_string(bcol) VALUES ('ê°€ë‚˜ë‹¤');
 
--- NCHAR Å¸ÀÔ È®ÀÎ : °íÁ¤±æÀÌ, ´ÜÀ§´Â ¹®ÀÚ°³¼ö, µÚ¿¡ °ø¹éÃß°¡µÊ
+-- NCHAR íƒ€ìž… í™•ì¸ : ê³ ì •ê¸¸ì´, ë‹¨ìœ„ëŠ” ë¬¸ìžê°œìˆ˜, ë’¤ì— ê³µë°±ì¶”ê°€ë¨
 INSERT INTO table_string(ccol) VALUES ('abcdefghij');
 INSERT INTO table_string(ccol) VALUES ('abcde');
-INSERT INTO table_string(ccol) VALUES ('°¡³ª´Ù¶ó');	
-INSERT INTO table_string(ccol) VALUES ('°¡³ª´Ù');
-INSERT INTO table_string(ccol) VALUES ('°¡³ª´Ù¶ó¸¶¹Ù»ç¾ÆÀÚÂ÷');		-- 10±ÛÀÚ±îÁö ok
-INSERT INTO table_string(ccol) VALUES ('°¡³ª´Ù¶ó¸¶¹Ù»ç¾ÆÀÚÂ÷Ä«');		-- 11±ÛÀÚ´Â ¿À·ù
+INSERT INTO table_string(ccol) VALUES ('ê°€ë‚˜ë‹¤ë¼');	
+INSERT INTO table_string(ccol) VALUES ('ê°€ë‚˜ë‹¤');
+INSERT INTO table_string(ccol) VALUES ('ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬ì•„ìžì°¨');		-- 10ê¸€ìžê¹Œì§€ ok
+INSERT INTO table_string(ccol) VALUES ('ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬ì•„ìžì°¨ì¹´');		-- 11ê¸€ìžëŠ” ì˜¤ë¥˜
 
--- NVARCHAR2 Å¸ÀÔ È®ÀÎ : °íÁ¤±æÀÌ, ´ÜÀ§´Â ¹®ÀÚ°³¼ö, µÚ¿¡ °ø¹éÃß°¡ x
+-- NVARCHAR2 íƒ€ìž… í™•ì¸ : ê³ ì •ê¸¸ì´, ë‹¨ìœ„ëŠ” ë¬¸ìžê°œìˆ˜, ë’¤ì— ê³µë°±ì¶”ê°€ x
 INSERT INTO table_string(dcol) VALUES ('abcdefghij');
 INSERT INTO table_string(dcol) VALUES ('abcde');
-INSERT INTO table_string(dcol) VALUES ('°¡³ª´Ù¶ó');	
-INSERT INTO table_string(dcol) VALUES ('°¡³ª´Ù');
-INSERT INTO table_string(dcol) VALUES ('°¡³ª´Ù¶ó¸¶¹Ù»ç¾ÆÀÚÂ÷');		-- 10±ÛÀÚ±îÁö ok
-INSERT INTO table_string(dcol) VALUES ('°¡³ª´Ù¶ó¸¶¹Ù»ç¾ÆÀÚÂ÷Ä«');		-- 11±ÛÀÚ´Â ¿À·ù
+INSERT INTO table_string(dcol) VALUES ('ê°€ë‚˜ë‹¤ë¼');	
+INSERT INTO table_string(dcol) VALUES ('ê°€ë‚˜ë‹¤');
+INSERT INTO table_string(dcol) VALUES ('ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬ì•„ìžì°¨');		-- 10ê¸€ìžê¹Œì§€ ok
+INSERT INTO table_string(dcol) VALUES ('ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬ì•„ìžì°¨ì¹´');		-- 11ê¸€ìžëŠ” ì˜¤ë¥˜
 
--- ¿©·¯°¡Áö ¾ð¾î¹®ÀÚ°¡ »ç¿ëµÇ°í ÀúÀåµÉ¶§ NVARCHAR2 ·Î ±ÛÀÚ¼ö¸¦ °è»êÇÏ´Â°ÍÀÌ ±Ç°í»çÇ×ÀÔ´Ï´Ù.
+-- ì—¬ëŸ¬ê°€ì§€ ì–¸ì–´ë¬¸ìžê°€ ì‚¬ìš©ë˜ê³  ì €ìž¥ë ë•Œ NVARCHAR2 ë¡œ ê¸€ìžìˆ˜ë¥¼ ê³„ì‚°í•˜ëŠ”ê²ƒì´ ê¶Œê³ ì‚¬í•­ìž…ë‹ˆë‹¤.
 
