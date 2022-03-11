@@ -39,6 +39,13 @@ BEGIN
 	dbms_output.put_line('Sales 최고연봉 직원 : ' || emp.last_name || ',' || emp.hire_date);
 END;
 
+SELECT * FROM EMPLOYEES e 
+	WHERE DEPARTMENT_ID =80 AND e.SALARY =14000;
+
+SELECT DEPARTMENT_ID 
+FROM DEPARTMENTS d WHERE DEPARTMENT_NAME ='Sales';
+SELECT max(salary) 
+FROM EMPLOYEES e WHERE DEPARTMENT_ID =80;
 
 --------------------------------------------------------------------
 -- 프로시저 오라클 객체로 생성하면 호출해서 다시 사용 가능
